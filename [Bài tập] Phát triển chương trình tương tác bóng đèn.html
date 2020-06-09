@@ -14,39 +14,50 @@
         }
         turnOn() {
            this.status = true;
+           console.log("Turn On");
         }
         turnOff() {
             this.status = false;
+            console.log("Turn Off")
         }
     }
 
    class SwitchButton {
        constructor() {
-           this.status = true;
+           this.status = false;
            this.lamp = ElectricLamp;
        }
        connectToLamp(ElectricLamp) {
-           ElectricLamp.this.status();
+          if (this.status === true) {
+              ElectricLamp.turnOn();
+          } else {
+              ElectricLamp.turnOff();
+          }
        }
        switchOff() {
-
+           this.status = false;
        }
        switchOn() {
-
+           this.status = true;
        }
    }
 
-    let elecTriclamp = new ElectricLamp();
-    let switchButton = new SwitchButton();
+    let button = new SwitchButton();
+    let lamp = new ElectricLamp();
+    button.switchOn();
+    button.switchOff();
+    button.switchOn();
+    button.connectToLamp(lamp);
 
-    switchButton.switchOff();
-    console.log(elecTriclamp.turnOn());
-    console.log(elecTriclamp.turnOff());
+
+
+
+
+
+
 
 
 </script>
-
-
 
 
 </body>
