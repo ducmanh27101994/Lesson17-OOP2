@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+
+<script>
+
+    // class Apple {
+    //     constructor() {
+    //         this.weight = 10;
+    //     }
+    //
+    //     getWeight() {
+    //         return this.weight;
+    //     }
+    //
+    //     decrease() {
+    //         this.weight--;
+    //     }
+    //
+    //     isEmpty() {
+    //         return this.weight > 0;
+    //     }
+    // }
+    //
+    // class Human {
+    //     constructor(name, gender, weightHuman) {
+    //         this.name = name;
+    //         this.gender = gender;
+    //         this.weightHuman = weightHuman;
+    //     }
+    //
+    //     // isMale() {
+    //     //     if (this.gender === "Male") {
+    //     //         return true;
+    //     //     } else {
+    //     //         return false;
+    //     //     }
+    //     // }
+    //
+    //     setGender(gender) {
+    //         this.gender = gender;
+    //     }
+    //
+    //     checkApple(Apple) {
+    //         return Apple.isEmpty();
+    //     }
+    //
+    //     setName(name) {
+    //         this.name = name;
+    //     }
+    //
+    //     getName() {
+    //         return this.name;
+    //     }
+    //
+    //     setWeightHuman(weightHuman) {
+    //         this.weightHuman = weightHuman;
+    //     }
+    //
+    //     getWeightHuman() {
+    //         return this.weightHuman;
+    //     }
+    //
+    //     eat(Apple) {
+    //         if (Apple.isEmpty()) {
+    //             this.weightHuman++;
+    //             Apple.decrease();
+    //         }
+    //     }
+    //
+    //     say(textarea) {
+    //         console.log(`${this.name}: ${textarea}`)
+    //     }
+    //
+    // }
+    //
+    // let apple = new Apple();
+    // let adam = new Human();
+    // let eva = new Human();
+    //
+    // adam.setName("Adam");
+    // adam.setGender("Male");
+    // adam.setWeightHuman(58);
+    // adam.eat(apple);
+    //
+    // eva.setName("Eva");
+    // eva.setGender("Female");
+    // eva.setWeightHuman(50);
+    // eva.eat(apple);
+    //
+    // console.log(adam.getWeightHuman());
+    // console.log(eva.getWeightHuman());
+    //
+    //
+    // adam.say("Hell0")
+    // eva.say("đời cô lựu")
+    //
+    // console.log(apple.isEmpty());
+    // console.log(apple.getWeight());
+    // console.log(adam);
+    // console.log(eva);
+
+
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        decrease() {
+            this.weight--;
+        }
+        isEmpty() {
+            return this.weight > 0;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weightHuman) {
+            this.name = name;
+            this.gender = gender;
+            this.weightHuman = weightHuman;
+        }
+       setGender(gender) {
+            this.gender = gender;
+       }
+       checkApple(Apple) {
+            return Apple.isEmpty();
+       }
+       eat(Apple) {
+            if (Apple.isEmpty()) {
+                this.weightHuman++;
+                Apple.decrease();
+            }
+       }
+       say(textarea) {
+            console.log(`${this.name} : ${textarea}`);
+       }
+       getName() {
+            return this.name;
+       }
+       setName(name) {
+            this.name = name;
+       }
+       getWeightHuman() {
+            return this.weightHuman;
+       }
+       setWeightHuman(weightHuman) {
+            this.weightHuman = weightHuman;
+       }
+    }
+
+    let apple = new Apple();
+    let adam = new Human();
+    let eva = new Human();
+
+    adam.setName("Adam");
+    adam.setGender("Male");
+    adam.setWeightHuman(40);
+    adam.eat(apple);
+
+    eva.setName("Eva");
+    eva.setGender("Female");
+    eva.setWeightHuman(30);
+    eva.eat(apple);
+
+
+    console.log(apple.isEmpty())
+    console.log(apple.getWeight())
+
+    console.log(adam.getWeightHuman());
+    console.log(eva.getWeightHuman());
+
+    adam.say("Con chào mẹ")
+    eva.say("lolo")
+
+    console.log(apple);
+    console.log(adam);
+    console.log(eva);
+
+
+
+
+</script>
+
+
+</body>
+</html>
