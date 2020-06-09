@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Mèo bắt chuột</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name,weight,speed,status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+        setStatus(status) {
+            this.status = status;
+        }
+
+        setSpeed(speed) {
+            this.speed = speed;
+        }
+        getSpeed() {
+            return this.speed;
+        }
+        say(textarea) {
+            console.log(`${name} : ${textarea}`)
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        getName() {
+            return this.name;
+        }
+    }
+    class Cat {
+        constructor(nameCat,weightCat) {
+            this.nameCat = nameCat;
+            this.weightCat = weightCat;
+            this.speedCat = 20;
+        }
+        setNameCat(nameCat) {
+            this.nameCat = nameCat;
+        }
+
+        say(textarea) {
+            console.log(`${this.nameCat} : ${textarea}`)
+        }
+        setWeightCat(weightCat) {
+            this.weightCat = weightCat;
+        }
+        getWeightCat() {
+            return this.weightCat;
+        }
+        catchTheMouse(Rat) {
+                if (this.speedCat > Rat.setSpeed()) {
+                    this.speedCat = 0;
+                    return true;
+            } return false;
+        }
+        eat(Rat) {
+
+            if (Rat.setStatus() === "live") {
+                this.weightCat += Rat.setWeight()
+            } return Rat.setStatus("die")
+        }
+    }
+
+    let mouse = new Rat();
+    let mouse1 = new Rat("Jerry2", 15, 15, "live");
+    let mouse2 = new Rat("Jerry3", 20, 15, "live");
+    let cat = new Cat();
+
+
+    mouse.setWeight(10);
+    mouse.setSpeed(18);
+    mouse.setName("Jerry")
+    mouse.setStatus("live")
+
+    cat.setWeightCat(30);
+    cat.setNameCat("Tom")
+    cat.eat(mouse,mouse1)
+
+
+    cat.say("Meo Meo")
+    mouse.say("Chit chit")
+    console.log(cat.getWeightCat());
+    console.log(cat);
+    console.log(mouse);
+    console.log(mouse1);
+
+
+</script>
+
+
+</body>
+</html>
