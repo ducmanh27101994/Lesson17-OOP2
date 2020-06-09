@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
+</head>
+<body>
+
+<script>
+    class Tivi {
+        constructor(channel,volume) {
+            this.channel = channel;
+            this.volume = volume;
+            this.status = false;
+        }
+        turnOn() {
+            this.status = true;
+            console.log("Turn On");
+        }
+        turnOff() {
+            this.status = false;
+            console.log("Turn Off")
+        }
+
+        changeTheChannelUp() {
+            if (this.status === true) {
+                this.channel++;
+            }
+        }
+        changeTheChannelDown() {
+            if (this.status === true) {
+                this.channel--;
+            }
+        }
+
+        volumeControlUp() {
+            if (this.status ===true) {
+                this.volume++;
+            }
+        }
+        volumeControlDown(){
+            if (this.status === true) {
+                this.volume--;
+            }
+
+        }
+        displayChannel() {
+            if (this.status === true) {
+                console.log(`Kênh đang phát là ${this.channel}`)
+            }
+        }
+
+    }
+    class Remote {
+        constructor() {
+            this.code = Tivi;
+            this.status = false
+        }
+        connectTivi(Tivi) {
+            if (this.status === true) {
+                Tivi.turnOn();
+            } else {
+                Tivi.turnOff();
+            }
+        }
+        switchOff() {
+            this.status = false;
+        }
+        switchOn() {
+            this.status = true;
+        }
+
+        sountControlUp(Tivi) {
+            Tivi.volume++;
+        }
+        sountControlDown(Tivi) {
+            Tivi.volume--;
+        }
+        channelUp(Tivi) {
+            Tivi.channel++;
+        }
+        channelDown(Tivi) {
+            Tivi.channel--;
+        }
+    }
+
+    let tivi = new Tivi(7,0);
+    let remote = new Remote();
+
+    tivi.turnOn()
+
+
+    console.log(tivi.displayChannel());
+
+    remote.channelDown(tivi);
+    remote.channelDown(tivi);
+    remote.channelDown(tivi);
+    remote.channelDown(tivi);
+
+    console.log(tivi.displayChannel());
+
+    tivi.volumeControlUp();
+    tivi.volumeControlUp();
+
+    console.log(tivi.volume);
+
+    remote.connectTivi(tivi);
+    remote.switchOff();
+
+
+
+</script>
+
+
+
+</body>
+</html>
